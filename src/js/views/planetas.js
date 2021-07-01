@@ -1,19 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Card } from "../component/card";
 import { Context } from "../store/appContext";
+import { Card } from "../component/card";
 
 export const Planetas = () => {
 	const { store, actions } = useContext(Context);
-
-	/* let [dataPlanetas, setDataPlanetas] = useState([]); */
-
-	/* const listadoPlanetas = () => {
-		fetch("https://swapi.dev/api/planets/?page=2", {
-			method: "GET"
-		})
-			.then(response => response.json())
-			.then(data => setDataPlanetas(data.results));
-	}; */
 
 	useEffect(() => {
 		actions.fetchPlanetas();
@@ -23,25 +13,25 @@ export const Planetas = () => {
 		<div className="container">
 			<h1 className="mb-3">Planetas</h1>
 			<div className="row flex-row flex-nowrap overflow-auto">
-				{store.planetasList.map((item, index) => {
-					const data = [
+				{store.planetsList.map((item, index) => {
+					const dataPlanetas = [
 						{
-							label: "name",
-							value: item.name
+							label: "Gravedad",
+							value: item.gravity
 						},
 						{
-							label: "gravity",
-							value: item.gravity
+							label: "Terreno",
+							value: item.terrain
 						}
 					];
 					return (
 						<Card
 							key={index}
-							/* key={index}
 							title={item.name}
-							gravity={item.gravity}
-							terrain={item.terrain}
-							link={item.url} */
+							/*gravity={item.gravity}
+							terrain={item.terrain}*/
+							link={item.url}
+							contenido={dataPlanetas}
 						/>
 					);
 				})}

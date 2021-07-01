@@ -1,33 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Context } from "../store/appContext";
 import { Card } from "../component/card";
 
 export const Vehiculos = () => {
-	let [dataVehiculos, setDataVehiculos] = useState([]);
-
-	const listadoVehiculos = () => {
-		fetch("https://swapi.dev/api/vehicles/?page=2", {
-			method: "GET"
-		})
-			.then(response => response.json())
-			.then(data => setDataVehiculos(data.results));
-	};
+	const { store, actions } = useContext(Context);
 
 	useEffect(() => {
-		listadoVehiculos();
+		actions.fetchVehiculos();
 	}, []);
 
 	return (
 		<div className="container">
 			<h1 className="mb-3">Vehiculos</h1>
 			<div className="row flex-row flex-nowrap overflow-auto">
-				{dataVehiculos.map((item, index) => {
+				{store.vehiclesList.map((item, index) => {
+					const dataVehicles = [
+						{
+							label: "Model",
+							value: item.model
+						},
+						{
+							label: "Manufactura",
+							value: item.manufacturer
+						}
+					];
 					return (
 						<Card
 							key={index}
 							title={item.name}
-							model={item.model}
-							manufacturer={item.manufacturer}
+							/* model={item.model}
+							manufacturer={item.manufacturer} */
 							link={item.url}
+							contenido={dataVehicles}
 						/>
 					);
 				})}

@@ -11,10 +11,17 @@ export const Card = props => {
 					alt="Card image cap"
 				/>
 				<div className="card-body">
-					{contenido.map((item, index) => {
-						return item.name, item.gravity;
-					})}
 					<h5 className="card-title">{props.title}</h5>
+					<p className="card-text">
+						{props.contenido.map((item, index) => {
+							return (
+								<p key={index}>
+									{item.label}: {item.value}
+								</p>
+							);
+						})}
+					</p>
+					{/* 
 
 					<p className="card-text">{props.gender}</p>
 					<p className="card-text">{props.hair_color}</p>
@@ -23,8 +30,7 @@ export const Card = props => {
 					<p className="card-text">{props.terrain}</p>
 
 					<p className="card-text">{props.model}</p>
-					<p className="card-text">{props.manufacturer}</p>
-
+					<p className="card-text">{props.manufacturer}</p> */}
 					<a href={props.link} className="btn btn-outline-primary">
 						Ver mas
 					</a>
