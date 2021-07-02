@@ -5,6 +5,12 @@ import ReactDOM from "react-dom";
 //include bootstrap npm library into the bundle
 import "bootstrap/dist/css/bootstrap.css";
 
+//include para q funcione popper
+import "bootstrap";
+import "bootstrap/dist/js/bootstrap.js";
+import $ from "jquery";
+import Popper from "popper.js";
+
 //include your index.scss file into the bundle
 import "../styles/index.scss";
 

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 
 export const Card = props => {
+	const { store, actions } = useContext(Context);
 	return (
 		<div className="col-3">
 			<div className="card my-2">
@@ -34,7 +36,9 @@ export const Card = props => {
 					<a href={props.link} className="btn btn-outline-primary">
 						Ver mas
 					</a>
-					<button className="btn btn-outline-warning float-right">
+					<button
+						onClick={() => actions.setfavorites(props.title)}
+						className="btn btn-outline-warning float-right">
 						<i className="fa fa-heart" />
 					</button>
 				</div>

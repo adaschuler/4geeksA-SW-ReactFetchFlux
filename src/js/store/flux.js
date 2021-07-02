@@ -14,9 +14,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} */
 			],
 			planetsList: [],
-			vehiclesList: []
+			vehiclesList: [],
+			favoritesList: []
 		},
 		actions: {
+			setfavorites: titulofav => {
+				const store = getStore();
+				setStore({ favoritesList: [...store.favoritesList, titulofav] });
+			},
 			fetchPeople: () => {
 				const URL = "https://swapi.dev/api/people";
 				const OBJCONFIG = {

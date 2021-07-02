@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
+
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
@@ -14,13 +17,33 @@ export const Navbar = () => {
 					<button className="btn btn-primary">Check the Context in action</button>
 				</Link> */}
 				<Link to="/personajes">
-					<button className="btn btn-light">Personajes</button>
+					<button className="btn btn-light mx-3">Personajes</button>
 				</Link>
 				<Link to="/vehiculos">
 					<button className="btn btn-light mx-3">Vehiculos</button>
 				</Link>
 				<Link to="/planetas">
-					<button className="btn btn-light">Planetas</button>
+					<button className="btn btn-light mx-3">Planetas</button>
+				</Link>
+				<Link className="dropdown mx-3">
+					<button
+						className="btn btn-warning dropdown-toggle"
+						type="button"
+						id="dropdownMenuButton"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false">
+						Favoritos {store.favoritesList.length}
+					</button>
+					<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						{store.favoritesList.map((item, index) => {
+							return (
+								<a key={index} className="dropdown-item" href="#">
+									{item}
+								</a>
+							);
+						})}
+					</div>
 				</Link>
 			</div>
 		</nav>
