@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
+import { Link, useHistory } from "react-router-dom";
 
 export const Card = props => {
 	const { store, actions } = useContext(Context);
+
+	const history = useHistory();
+
 	return (
 		<div className="col-3">
 			<div className="card my-2">
@@ -33,11 +37,24 @@ export const Card = props => {
 
 					<p className="card-text">{props.model}</p>
 					<p className="card-text">{props.manufacturer}</p> */}
-					<a href={props.link} className="btn btn-outline-primary">
+					{/* <Link className="btn btn-outline-primary" to={`/detail/${props.type}/${props.id}`}>
+						Detalle
+					</Link> */}
+					<a
+						onClick={
+							(() => actions.setUrldetail(props.link), history.push(`/detail/${props.type}/${props.id}`))
+						}
+						className="btn btn-outline-primary">
 						Ver mas
 					</a>
 					<button
-						onClick={() => actions.setfavorites(props.title)}
+						onClick={
+							() =>
+								actions.setfavorites(
+									props.title
+								) /* ;
+                        if (props.title != props.title) */
+						}
 						className="btn btn-outline-warning float-right">
 						<i className="fa fa-heart" />
 					</button>
@@ -57,5 +74,8 @@ Card.propTypes = {
 	model: PropTypes.string,
 	manufacturer: PropTypes.string,
 	link: PropTypes.string,
-	contenido: PropTypes.array
+	contenido: PropTypes.array,
+	type: PropTypes.string,
+	id: PropTypes.object
+	/* history: PropTypes.object */
 };

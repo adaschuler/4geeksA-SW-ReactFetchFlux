@@ -13,14 +13,34 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				} */
 			],
+			detail: "",
+			detailData: {},
 			planetsList: [],
 			vehiclesList: [],
 			favoritesList: []
 		},
 		actions: {
+			setUrldetail: url => {
+				const store = getStore();
+				setStore({ detail: url });
+			},
 			setfavorites: titulofav => {
 				const store = getStore();
 				setStore({ favoritesList: [...store.favoritesList, titulofav] });
+			},
+			fetchDetail: () => {
+				const store = getStore();
+				const URL = store.detail;
+				const OBJCONFIG = {
+					method: "GET",
+					headers: {
+						"Content-type": "aplication/json"
+					}
+				};
+
+				fetch(URL, OBJCONFIG)
+					.then(res => res.json()) //Texto plano
+					.then(data => setStore({ detailData: data })); //Obtienes los datos
 			},
 			fetchPeople: () => {
 				const URL = "https://swapi.dev/api/people";

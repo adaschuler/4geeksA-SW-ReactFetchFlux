@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 
+	/* function favDelete(index) {
+		if (index > -1) {
+			const filterList = store.favoritesList.filter(item => item !== store.favoritesList[index]);
+			setTodos(filterList);
+ */
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
@@ -16,6 +21,9 @@ export const Navbar = () => {
 				{/* 				<Link to="/demo">
 					<button className="btn btn-primary">Check the Context in action</button>
 				</Link> */}
+				<Link to="/detail">
+					<button className="btn btn-light mx-3">Detail</button>
+				</Link>
 				<Link to="/personajes">
 					<button className="btn btn-light mx-3">Personajes</button>
 				</Link>
@@ -40,6 +48,13 @@ export const Navbar = () => {
 							return (
 								<a key={index} className="dropdown-item" href="#">
 									{item}
+									{/* <button
+										className="btn btn-light float-right"
+										onClick={() => {
+											favDelete(index);
+										}}>
+										<i className="fa-trash" />
+									</button> */}
 								</a>
 							);
 						})}
