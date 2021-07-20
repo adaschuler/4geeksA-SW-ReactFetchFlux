@@ -26,7 +26,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			setfavorites: titulofav => {
 				const store = getStore();
-				setStore({ favoritesList: [...store.favoritesList, titulofav] });
+				if (store.favoritesList.includes(titulofav) === false) {
+					setStore({ favoritesList: [...store.favoritesList, titulofav] });
+				}
+			},
+			setEliminarFavoritos: titulofav => {
+				setStore({ favoritesList: getStore().favoritesList.filter(favorites => favorites !== titulofav) });
 			},
 			fetchDetail: () => {
 				const store = getStore();

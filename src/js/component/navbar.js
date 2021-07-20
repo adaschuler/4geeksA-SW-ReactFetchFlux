@@ -9,6 +9,8 @@ export const Navbar = () => {
 		if (index > -1) {
 			const filterList = store.favoritesList.filter(item => item !== store.favoritesList[index]);
 			setTodos(filterList);
+			}
+	}
  */
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
@@ -43,18 +45,21 @@ export const Navbar = () => {
 						aria-expanded="false">
 						Favoritos {store.favoritesList.length}
 					</button>
-					<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<div
+						className="dropdown-menu dropdown-menu-right"
+						aria-labelledby="dropdownMenuButton"
+						style={{ position: "absolute", top: "30px" }}>
 						{store.favoritesList.map((item, index) => {
 							return (
 								<a key={index} className="dropdown-item" href="#">
 									{item}
-									{/* <button
+									<button
 										className="btn btn-light float-right"
 										onClick={() => {
-											favDelete(index);
+											actions.setEliminarFavoritos(item);
 										}}>
-										<i className="fa-trash" />
-									</button> */}
+										<span>X</span>
+									</button>
 								</a>
 							);
 						})}

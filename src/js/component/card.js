@@ -40,21 +40,19 @@ export const Card = props => {
 					{/* <Link className="btn btn-outline-primary" to={`/detail/${props.type}/${props.id}`}>
 						Detalle
 					</Link> */}
-					<a
+					{/* <a
 						onClick={
 							(() => actions.setUrldetail(props.link), history.push(`/detail/${props.type}/${props.id}`))
 						}
 						className="btn btn-outline-primary">
 						Ver mas
-					</a>
+					</a> */}
 					<button
-						onClick={
-							() =>
-								actions.setfavorites(
-									props.title
-								) /* ;
-                        if (props.title != props.title) */
-						}
+						onClick={() => actions.setfavorites(props.title)}
+						/* {
+							if (props.title != props.title);
+							actions.setfavorites(props.title);
+						}} */
 						className="btn btn-outline-warning float-right">
 						<i className="fa fa-heart" />
 					</button>
