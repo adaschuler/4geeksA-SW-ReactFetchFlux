@@ -28,6 +28,7 @@ export const Planetas = () => {
 						<Card
 							key={index}
 							title={item.name}
+							imagen="https://starwarsblog.starwars.com/wp-content/uploads/2015/01/Coruscant.jpeg"
 							/*gravity={item.gravity}
 							terrain={item.terrain}*/
 							link={item.url}

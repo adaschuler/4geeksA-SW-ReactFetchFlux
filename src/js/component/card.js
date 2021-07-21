@@ -11,11 +11,7 @@ export const Card = props => {
 	return (
 		<div className="col-3">
 			<div className="card my-2">
-				<img
-					className={props.url}
-					src="https://lumiere-a.akamaihd.net/v1/images/cid-main_4501723a.jpeg"
-					alt="Card image cap"
-				/>
+				<img className={props.url} src={props.imagen} alt="Card image cap" />
 				<div className="card-body">
 					<h5 className="card-title">{props.title}</h5>
 					<p className="card-text">
@@ -47,6 +43,9 @@ export const Card = props => {
 						className="btn btn-outline-primary">
 						Ver mas
 					</a> */}
+					<a href="#" className="btn btn-outline-primary">
+						Ver mas!
+					</a>
 					<button
 						onClick={() => actions.setfavorites(props.title)}
 						/* {
@@ -64,6 +63,7 @@ export const Card = props => {
 
 Card.propTypes = {
 	url: PropTypes.string,
+	imagen: PropTypes.string,
 	title: PropTypes.string,
 	gender: PropTypes.string,
 	hair_color: PropTypes.string,

@@ -28,6 +28,7 @@ export const Personajes = () => {
 						<Card
 							key={index}
 							title={item.name}
+							imagen="https://starwarsblog.starwars.com/wp-content/uploads/2018/12/final-dark-visions-tall.jpg"
 							/* gender={item.gender}
 							hair_color={item.hair_color} */
 							link={item.url}

@@ -28,6 +28,7 @@ export const Vehiculos = () => {
 						<Card
 							key={index}
 							title={item.name}
+							imagen="https://lumiere-a.akamaihd.net/v1/images/Death-Star-I-copy_36ad2500.jpeg"
 							/* model={item.model}
 							manufacturer={item.manufacturer} */
 							link={item.url}
