@@ -20,12 +20,6 @@ export const Navbar = () => {
 				</span>
 			</Link>
 			<div className="ml-auto">
-				{/* 				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
-				</Link> */}
-				<Link to="/detail">
-					<button className="btn btn-light mx-3">Detail</button>
-				</Link>
 				<Link to="/personajes">
 					<button className="btn btn-light mx-3">Personajes</button>
 				</Link>
@@ -48,7 +42,7 @@ export const Navbar = () => {
 					<div
 						className="dropdown-menu dropdown-menu-right"
 						aria-labelledby="dropdownMenuButton"
-						style={{ position: "absolute", top: "30px" }}>
+						style={{ position: "absolute", top: "40px" }}>
 						{store.favoritesList.map((item, index) => {
 							return (
 								<a key={index} className="dropdown-item" href="#">

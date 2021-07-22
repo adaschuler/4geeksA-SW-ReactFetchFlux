@@ -28,11 +28,11 @@ export const Personajes = () => {
 						<Card
 							key={index}
 							title={item.name}
-							imagen="https://starwarsblog.starwars.com/wp-content/uploads/2018/12/final-dark-visions-tall.jpg"
-							/* gender={item.gender}
-							hair_color={item.hair_color} */
+							imagen="https://dam.smashmexico.com.mx/wp-content/uploads/2018/03/Star-Wars-1024x576.jpg"
 							link={item.url}
 							contenido={dataPeople}
+							category={"/people/"}
+							id={index}
 						/>
 					);
 				})}

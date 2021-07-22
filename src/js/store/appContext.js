@@ -22,6 +22,9 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
+			state.actions.fetchPeople(state.store.urlPeople);
+			state.actions.fetchPlanetas(state.store.urlPlanetas);
+			state.actions.fetchVehiculos(state.store.urlVehiculos);
 			/**
 			 * EDIT THIS!
 			 * This function is the equivalent to "window.onLoad", it only runs once on the entire application lifetime

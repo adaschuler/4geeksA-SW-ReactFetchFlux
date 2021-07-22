@@ -23,35 +23,11 @@ export const Card = props => {
 							);
 						})}
 					</p>
-					{/* 
-
-					<p className="card-text">{props.gender}</p>
-					<p className="card-text">{props.hair_color}</p>
-
-					<p className="card-text">{props.gravity}</p>
-					<p className="card-text">{props.terrain}</p>
-
-					<p className="card-text">{props.model}</p>
-					<p className="card-text">{props.manufacturer}</p> */}
-					{/* <Link className="btn btn-outline-primary" to={`/detail/${props.type}/${props.id}`}>
+					<Link to={props.category + props.id} className="btn btn-outline-primary">
 						Detalle
-					</Link> */}
-					{/* <a
-						onClick={
-							(() => actions.setUrldetail(props.link), history.push(`/detail/${props.type}/${props.id}`))
-						}
-						className="btn btn-outline-primary">
-						Ver mas
-					</a> */}
-					<a href="#" className="btn btn-outline-primary">
-						Ver mas!
-					</a>
+					</Link>
 					<button
 						onClick={() => actions.setfavorites(props.title)}
-						/* {
-							if (props.title != props.title);
-							actions.setfavorites(props.title);
-						}} */
 						className="btn btn-outline-warning float-right">
 						<i className="fa fa-heart" />
 					</button>
@@ -74,6 +50,6 @@ Card.propTypes = {
 	link: PropTypes.string,
 	contenido: PropTypes.array,
 	type: PropTypes.string,
-	id: PropTypes.object
-	/* history: PropTypes.object */
+	id: PropTypes.object,
+	category: PropTypes.string
 };

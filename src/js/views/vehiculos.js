@@ -33,6 +33,8 @@ export const Vehiculos = () => {
 							manufacturer={item.manufacturer} */
 							link={item.url}
 							contenido={dataVehicles}
+							category={"/vehicles/"}
+							id={index}
 						/>
 					);
 				})}

@@ -4,9 +4,12 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Personajes } from "./views/personajes";
+import { Detpersonajes } from "./views/detpersonajes";
 import { Vehiculos } from "./views/vehiculos";
+import { Detvehiculos } from "./views/detvehiculos";
 import { Planetas } from "./views/planetas";
-import { Detail } from "./views/detail";
+import { Detplanetas } from "./views/detplanetas";
+import { Detail } from "./views2/detail";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
@@ -35,14 +38,20 @@ const Layout = () => {
 						<Route exact path="/vehiculos">
 							<Vehiculos />
 						</Route>
+						<Route exact path="/vehicles/:id">
+							<Detvehiculos />
+						</Route>
 						<Route exact path="/planetas">
 							<Planetas />
+						</Route>
+						<Route exact path="/planets/:id">
+							<Detplanetas />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />
 						</Route>
-						<Route exact path="/detail/">
-							<Detail />
+						<Route exact path="/people/:id">
+							<Detpersonajes />
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />

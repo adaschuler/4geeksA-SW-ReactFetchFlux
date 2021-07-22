@@ -33,6 +33,8 @@ export const Planetas = () => {
 							terrain={item.terrain}*/
 							link={item.url}
 							contenido={dataPlanetas}
+							category={"/planets/"}
+							id={index}
 						/>
 					);
 				})}
