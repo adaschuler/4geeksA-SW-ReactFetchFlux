@@ -42,21 +42,15 @@ export const Detplanetas = props => {
 							<h3>{store.planetsList[parseInt(params.id)].name}</h3>
 						</li>
 						<li className="list-group-item">
-							Masa: {store.planetsList[parseInt(params.id)].rotation_period}
+							Periodo de rotacion: {store.planetsList[parseInt(params.id)].rotation_period}
 						</li>
 						<li className="list-group-item">
-							Color cabello: {store.planetsList[parseInt(params.id)].orbital_period}
+							Periodo de orbita: {store.planetsList[parseInt(params.id)].orbital_period}
 						</li>
-						<li className="list-group-item">
-							Color de piel: {store.planetsList[parseInt(params.id)].diameter}
-						</li>
-						<li className="list-group-item">
-							Color de ojos: {store.planetsList[parseInt(params.id)].climate}
-						</li>
-						<li className="list-group-item">
-							Año de nacimiento: {store.planetsList[parseInt(params.id)].gravity}
-						</li>
-						<li className="list-group-item">Genero: {store.planetsList[parseInt(params.id)].terrain}</li>
+						<li className="list-group-item">Diametro: {store.planetsList[parseInt(params.id)].diameter}</li>
+						<li className="list-group-item">Clima: {store.planetsList[parseInt(params.id)].climate}</li>
+						<li className="list-group-item">Gravedad: {store.planetsList[parseInt(params.id)].gravity}</li>
+						<li className="list-group-item">Terreno: {store.planetsList[parseInt(params.id)].terrain}</li>
 					</ul>
 				</div>
 			</div>

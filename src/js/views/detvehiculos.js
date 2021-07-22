@@ -41,20 +41,19 @@ export const Detvehiculos = props => {
 						<li className="list-group-item">
 							<h3>{store.vehiclesList[parseInt(params.id)].name}</h3>
 						</li>
-						<li className="list-group-item">Masa: {store.vehiclesList[parseInt(params.id)].model}</li>
+						<li className="list-group-item">Modelo: {store.vehiclesList[parseInt(params.id)].model}</li>
 						<li className="list-group-item">
-							Color cabello: {store.vehiclesList[parseInt(params.id)].manufacturer}
+							Manufactura: {store.vehiclesList[parseInt(params.id)].manufacturer}
 						</li>
 						<li className="list-group-item">
-							Color de piel: {store.vehiclesList[parseInt(params.id)].cost_in_credits}
+							Avaluo: {store.vehiclesList[parseInt(params.id)].cost_in_credits}
 						</li>
+						<li className="list-group-item">Extension: {store.vehiclesList[parseInt(params.id)].length}</li>
 						<li className="list-group-item">
-							Color de ojos: {store.vehiclesList[parseInt(params.id)].length}
+							Maxima velocidad atmosferica:{" "}
+							{store.vehiclesList[parseInt(params.id)].max_atmosphering_speed}
 						</li>
-						<li className="list-group-item">
-							Año de nacimiento: {store.vehiclesList[parseInt(params.id)].max_atmosphering_speed}
-						</li>
-						<li className="list-group-item">Genero: {store.vehiclesList[parseInt(params.id)].crew}</li>
+						<li className="list-group-item">Tripulacion: {store.vehiclesList[parseInt(params.id)].crew}</li>
 					</ul>
 				</div>
 			</div>
